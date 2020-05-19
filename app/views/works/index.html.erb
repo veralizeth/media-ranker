@@ -1,0 +1,21 @@
+
+<% if @works.length > 0%>
+  <table class="table table-hover">
+     <thead class="thead-dark">
+      <tr>
+        <th>title</th>
+        <th>creator</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @works.each do |work|%>
+      <tr>
+        <td><%= work.title %></td>
+        <td><%= work.creator %></td>
+      </tr>
+    </tbody>
+    <%end %>
+</table>
+<%else%>
+  <h3> No works! </h3>
+<%end%>
