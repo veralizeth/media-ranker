@@ -16,3 +16,25 @@
 @import "bootstrap";
 
 @import "**/*";
+
+.app-header__header {
+    max-width: 100%;
+    background-color: #e4c2c0;
+    margin-bottom: 0.5rem;
+    padding: 2rem 1rem 0.5rem 1rem;
+}
+.navbar-collapse .nav-link {
+    color: #2e2a2a;
+}
+
+.navbar-light .navbar-nav .show .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: #2e2a2a;
+}
+
+.navbar-light .navbar-brand {
+  color: #2e2a2a;
+}
+
+.bg-light {
+  background-color: #e4c2c0 !important
+}
