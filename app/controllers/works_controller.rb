@@ -3,18 +3,18 @@ class WorksController < ApplicationController
     @works = Work.all
   end
 
-def show
-  # Raise an exception.
-  # Be aware that any string will be converted to 0
-  work_id = params[:id].to_i
-  # It needs to handle this exception.
-  @work = Work.find_by(id: work_id)
+  def show
+    # Raise an exception.
+    # Be aware that any string will be converted to 0
+    work_id = params[:id].to_i
+    # It needs to handle this exception.
+    @work = Work.find_by(id: work_id)
 
-  if @work.nil?
-    head :not_found
-    return
+    if @work.nil?
+      head :not_found
+      return
+    end
   end
-end
 
   def new
     @work = Work.new
@@ -24,10 +24,13 @@ end
     @work = Work.new(work_params)
 
     if @work.save
+      flash[:success] = "#{@work.title} was successfully added!"
       redirect_to work_path(@work.id)
       return
     else
-      render :new
+      flash.now[:error] = "#{@work.title} was NOT successfully added :( "
+      render :new, status: :bad_request
+      return
     end
   end
 
