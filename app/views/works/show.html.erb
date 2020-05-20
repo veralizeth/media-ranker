@@ -1,0 +1,14 @@
+
+<section>
+  <h2><%= @work.title %></h2>
+  <p>Created by: <%= @work.creator%></p>
+  <p>Published: <%= @work.publication_year%></p>
+  <section>
+    <p><%= link_to "Back to media ranks", works_path, class: "btn btn-primary"%></p> 
+    <p><%= link_to "Edit", edit_work_path(@work), class: "btn btn-primary"%></p> 
+    <p><%= link_to "Delete", work_path(@work), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"%></p>
+    <p><%= link_to "Upvote",  work_path(@work), class: "btn btn-primary"%></p> 
+  </section>
+</section>
+
+
