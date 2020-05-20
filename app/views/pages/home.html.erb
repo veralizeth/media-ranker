@@ -1,0 +1,39 @@
+<h1>Hello</h1>
+
+<section class="top-ten__container">
+  <section class="top-ten__list-container">
+  <h2 class="top-ten__header">
+    Top Movies
+  </h2>
+    <ul class="list-group top-ten__list">
+      <% Work.top_ten("movie").each do |movie| %> 
+        <li><h4><%=movie.title %></h4></li>
+        <li class="top-ten__creator"><%=movie.creator%></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="top-ten__list-container">
+  <h2 class="top-ten__header">
+    Top Books
+  </h2>
+    <ul class="list-group top-ten__list">
+      <% Work.top_ten("book").each do |book| %> 
+        <li><h4><%=book.title %></h4></li>
+        <li class="top-ten__creator"><%=book.creator%></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="top-ten__list-container">
+  <h2 class="top-ten__header">
+    Top Album
+  </h2>
+    <ul class="list-group top-ten__list">
+      <% Work.top_ten("album").each do |album| %> 
+        <li><h4><%=album.title %></h4></li>
+        <li class="top-ten__creator"><%=album.creator%></li>
+      <% end %>
+  </ul>
+  </section>
+</section>
