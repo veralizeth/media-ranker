@@ -3,15 +3,21 @@
   <table class="table table-hover">
      <thead class="thead-dark">
       <tr>
-        <th>title</th>
-        <th>creator</th>
+        <th>votes</th>
+        <th>Title</th>
+        <th>Created By</th>
+        <th>Published</th>
+        <th>Upvote</th>
       </tr>
     </thead>
     <tbody>
     <% @works.each do |work|%>
       <tr>
-        <td><%= work.title %></td>
+        <td><%=%></td>
+        <td><%= link_to work.title, work_path(work.id)  %></td>
         <td><%= work.creator %></td>
+        <td><%= work.creator %></td>
+        <td> <%= link_to "Upvote", class: "btn btn-primary"%></td>
       </tr>
     </tbody>
     <%end %>
