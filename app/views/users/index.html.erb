@@ -1,0 +1,28 @@
+<main>
+<h2>List of Users</h2>
+<%=link_to "Back to Media List", works_path, :class => "btn btn-primary"%>
+  <section class="media-table">
+    <% if @users.length > 0%>
+      <table class="table table-hover">
+        <thead class="thead-table">
+          <tr>
+            <th>Username</th>
+            <th>Votes</th>
+            <th>Joined</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= link_to user.username, current_user_path(user.id)  %></td>
+            <td><%= user.votes.count %></td>
+            <td><%= user.created_at.strftime("%b %d, %Y")%></td>
+          </tr>
+        </tbody>
+        <%end %>
+    </table>
+    <%else%>
+      <h3> No works! </h3>
+    <%end%>
+  </section>
+</main>
