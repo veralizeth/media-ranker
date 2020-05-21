@@ -38,3 +38,17 @@
 .bg-light {
   background-color: #e4c2c0 !important
 }
+
+.btn-primary {
+    background-color: #444d54;
+    color: white;
+    border-color: #444d54;
+    cursor: pointer;
+    margin: 10px;
+}
+
+
+.btn-primary:hover {
+  background-color: lightcoral;
+   border-color: lightcoral;
+}
