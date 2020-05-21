@@ -1,10 +1,10 @@
-
+<main>
 <h2>List of Works</h2>
 <section class="media-table">
   <% if @works.length > 0%>
     <h4>Books</h4>
     <table class="table table-hover">
-      <thead class="thead-dark">
+      <thead class="thead-table">
         <tr>
           <th>votes</th>
           <th>Title</th>
@@ -20,7 +20,7 @@
           <td><%= link_to book.title, work_path(book.id)  %></td>
           <td><%= book.creator %></td>
           <td><%= book.creator %></td>
-          <td> <%= link_to "Upvote", class: "btn btn-primary"%></td>
+          <td> <%= link_to "Upvote", work_votes_path(book.id), method: :post %></td>
         </tr>
       </tbody>
       <%end %>
@@ -34,7 +34,7 @@
   <% if @works.length > 0%>
     <h4>Movies</h4>
     <table class="table table-hover">
-      <thead class="thead-dark">
+      <thead class="thead-table">
         <tr>
           <th>votes</th>
           <th>Title</th>
@@ -50,7 +50,7 @@
           <td><%= link_to movie.title, work_path(movie.id)  %></td>
           <td><%= movie.creator %></td>
           <td><%= movie.creator %></td>
-          <td> <%= link_to "Upvote", class: "btn btn-primary"%></td>
+          <td> <%= link_to "Upvote", work_votes_path(movie.id), method: :post%></td>
         </tr>
       </tbody>
       <%end %>
@@ -64,7 +64,7 @@
   <% if @works.length > 0%>
     <h4>Albums</h4>
     <table class="table table-hover">
-      <thead class="thead-dark">
+      <thead class="thead-table">
         <tr>
           <th>votes</th>
           <th>Title</th>
@@ -80,7 +80,7 @@
           <td><%= link_to album.title, work_path(album.id)  %></td>
           <td><%= album.creator %></td>
           <td><%= album.creator %></td>
-          <td> <%= link_to "Upvote", class: "btn btn-primary"%></td>
+          <td> <%= link_to "Upvote", work_votes_path(album.id), method: :post%></td>
         </tr>
       </tbody>
       <%end %>
@@ -89,3 +89,4 @@
     <h3> No works! </h3>
   <%end%>
 </section>
+</main>

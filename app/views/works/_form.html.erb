@@ -9,29 +9,30 @@
   <% end %>
 </ul>
 <% end %>
-
+<main>
 <h2>Add a new work</h2>
-<div class="form-group">
-  <%= f.label :category %>
-  <%= f.select :category, ["album", "movie", "book"], class: "form-control"%>
-</div>
-<div class="form-group">
-  <%= f.label :title %>
-  <%= f.text_field :title , class: "form-control" %>
-</div>
-<div class="form-group">
-  <%= f.label :creator %>
-  <%= f.text_field :creator , class: "form-control"%>
-</div>
-<div class="form-group">
-  <%= f.label :publication_year %>
-  <%= f.text_field :publication_year , class: "form-control"%>
-</div>
-<div class="form-group">
-  <%= f.label :description %>
-  <%= f.text_field :description , class: "form-control"%>
-</div>
-<div class="form-group">
-  <%= f.submit action_name , class: "btn btn-primary"%>
-</div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.select :category, ["album", "movie", "book"], class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :creator %>
+    <%= f.text_field :creator , class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :publication_year %>
+    <%= f.text_field :publication_year , class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description , class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.submit action_name , class: "btn btn-primary"%>
+  </div>
 <% end %>
+</main>
