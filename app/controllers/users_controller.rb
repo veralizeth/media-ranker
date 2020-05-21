@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def login_form
     @user = User.new
   end
@@ -56,6 +55,17 @@ class UsersController < ApplicationController
       # I have to be logged in!
       flash[:error] = "You must be logged in to view this page"
       redirect_to root_path
+      return
+    end
+  end
+
+  def show
+    user_id = params[:id].to_i
+    # It needs to handle this exception.
+    @user = User.find_by(id: user_id)
+
+    if @user.nil?
+      head :not_found
       return
     end
   end
