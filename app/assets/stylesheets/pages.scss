@@ -2,14 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .top-ten__header {
-    color: #fe3465;
+    color: #B39BC8;
     border-bottom: 2px solid;
-    border-bottom-color: #fe3465;
+    border-bottom-color: #B39BC8;
     font-family: "Gudea", sans-serif;
 }
 
 a, h2, h3, h4 {
-    color: #fe3465;
+    color: rgb(27, 175, 238);
     font-weight: 400;
     font-family: "Gudea", sans-serif;
 }
@@ -17,4 +17,31 @@ a, h2, h3, h4 {
 .top-ten__creator {
     color: slategrey;
     font-family: "Gudea", sans-serif;
+}
+
+.top-ten__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2em;
+}
+
+element {
+
+}
+.top-ten__list {
+
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+
+}
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+main {
+    padding: 2rem;
 }
