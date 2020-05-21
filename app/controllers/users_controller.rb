@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
+
   def login_form
     @user = User.new
+  end
+
+  def index
+    @users = User.all
   end
 
   def login
@@ -25,7 +30,7 @@ class UsersController < ApplicationController
 
     session[:user_id] = user.id
     session[:username] = user.username
-    
+
     redirect_to root_path
   end
 
