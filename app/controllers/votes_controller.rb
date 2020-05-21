@@ -16,7 +16,7 @@ class VotesController < ApplicationController
         return
       end
     elsif session[:user_id] == nil
-      flash.now[:error] = "You should be logged to vote :( "
+      flash[:error] = "You should be logged to vote :( "
       redirect_to works_path
     end
   end
