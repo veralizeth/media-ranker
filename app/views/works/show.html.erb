@@ -10,6 +10,26 @@
       <%= link_to "Upvote", work_votes_path(@work.id), method: :post,  class: "btn btn-primary"%>
     </section>
   </section>
+
+  <section class="works-votes__container">
+  <h3 class="works-votes__header"><%=Vote.where(work_id: @work.id).count%> Votes for this Album</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% Vote.where(work_id: @work.id).each do |vote| %>
+      <% user = User.find_by(id: vote.user_id)%>
+      <tr>
+        <td><%= link_to vote.user.username, user_path(vote.user.id)%></td>
+        <td><%= vote.created_at.strftime("%b %d, %Y")%></td>
+      <tr>
+     <% end %>
+    </tbody>
+  </table>
 </main>
 
 
