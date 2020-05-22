@@ -1,0 +1,36 @@
+book_1:
+  category: 'book'
+  title: 'book_one'
+  creator: 'one'
+  publication_year: '2019'
+  description: 'one one one'
+book_2:
+  category: 'book'
+  title: 'book_two'
+  creator: 'two'
+  publication_year: '2019'
+  description: 'two two two'
+book_3:
+  category: 'book'
+  title: 'book_three'
+  creator: 'three'
+  publication_year: '2019'
+  description: 'three three three'
+album_1:
+  category: 'album'
+  title: 'album_one'
+  creator: 'one'
+  publication_year: '2019'
+  description: 'one one onealmbum'
+album_2:
+  category: 'album'
+  title: 'album_two'
+  creator: 'two'
+  publication_year: '2019'
+  description: 'two two two album'
+album_3:
+  category: 'album'
+  title: 'album_three'
+  creator: 'three'
+  publication_year: '2019'
+  description: 'AAAAA'
