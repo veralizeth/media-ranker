@@ -20,10 +20,11 @@ class Work < ApplicationRecord
     voted_works = all_works.select do |work|
       work.category == category && work.votes.count > 0
     end
-    # Minus -work to order the results descending. 
+
+    # Minus -work to order the results descending.
     top = voted_works.sort_by { |work| -work.votes.length }
 
-    top.length < 10 ? top : top[0..9]
+    return top.length < 11 ? top : top[0..9]
   end
 
   def self.spotlight
