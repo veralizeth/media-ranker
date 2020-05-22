@@ -1,6 +1,6 @@
-ENV['RAILS_ENV'] ||= 'test'
-require_relative '../config/environment'
-require 'rails/test_help'
+ENV["RAILS_ENV"] ||= "test"
+require_relative "../config/environment"
+require "rails/test_help"
 require "minitest/rails"
 require "minitest/reporters"  # for Colorized output
 #  For colorful output!
@@ -18,4 +18,17 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login(username = "new_user_test")
+    # Arrange
+    user_hash = {
+      user: {
+        username: username,
+      },
+    }
+
+    post login_path, params: user_hash
+
+    user = User.find_by(username: username)
+    return user
+  end
 end
