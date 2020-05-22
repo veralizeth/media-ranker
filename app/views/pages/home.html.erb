@@ -1,11 +1,15 @@
 <main>
 <section class="spotlight">
   <h2 class="spotlight__header">
-    <span class="spotlight__header--prefix">Media Spotlight:</span>
-    <%=link_to Work.spotlight.title, work_path(Work.spotlight.id) %>
-  </h2>
-  <p class="spotlight__description"><%= Work.spotlight.votes.count %> votes -</p>
-  <p class="spotlight__description"><%= Work.spotlight.description %></p>
+    <% if Work.spotlight.nil? %>
+      <p><%= "We dont have votes so far!"%></p>
+    <% else %>
+      <span class="spotlight__header--prefix">Media Spotlight:</span>
+      <%=link_to Work.spotlight.title, work_path(Work.spotlight.id) %>
+    </h2>
+      <p class="spotlight__description"><%= Work.spotlight.votes.count %> votes -</p>
+      <p class="spotlight__description"><%= Work.spotlight.description %></p>
+    <%end%>
 </section>
 
 <hr class="root__hr" />
