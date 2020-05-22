@@ -18,6 +18,7 @@
       <% Work.top_ten("movie").each do |movie| %> 
         <li><h4><%=link_to movie.title, work_path(movie.id) %></h4></li>
         <li class="top-ten__creator"><%=movie.creator%></li>
+        <p><%=movie.votes.count%> votes</p>
       <% end %>
     </ul>
   </section>
@@ -30,6 +31,7 @@
       <% Work.top_ten("book").each do |book| %> 
         <li><h4><%= link_to book.title, work_path(book.id)%></h4></li>
         <li class="top-ten__creator"><%=book.creator%></li>
+        <p><%=book.votes.count%> votes</p>
       <% end %>
     </ul>
   </section>
@@ -42,6 +44,7 @@
       <% Work.top_ten("album").each do |album| %> 
         <li><h4><%=link_to album.title, work_path(album.id) %></h4></li>
         <li class="top-ten__creator"><%=album.creator%></li>
+        <p><%=album.votes.count%> votes</p>
       <% end %>
   </ul>
   </section>
