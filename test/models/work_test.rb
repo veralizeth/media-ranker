@@ -92,24 +92,32 @@ describe Work do
   end
 
   describe "Custom model methods" do
+
     before do
-      work1 = Work.create(category: "book", title: "The Opera", creator: "LALA", publication_year: "1935", description: "Night at the Opera")
-      work2 = Work.create(category: "movie", title: "The Soer", creator: "Robert Downs", publication_year: "1995", description: "Opera")
-      work3 = Work.create(category: "movie", title: "The Soer II", creator: "Robert Downs", publication_year: "2000", description: "Opera II")
+      user1 = users(:user_1).id
+      user2 = users(:user_2).id
+      work1 = works(:book_2).id
+      work2 = works(:book_1).id
+      work3 = works(:book_3).id
+
+      vote_1 = Vote.create(user_id: user2, work_id: work2)
+      vote_2 = Vote.create(user_id: user1, work_id: work2)
+      vote_3 = Vote.create(user_id: user2, work_id: work1)
+      vote_4 = Vote.create(user_id: user1, work_id: work3)
     end
 
     it "can display all_work per category" do
       # Arrange
-      movie = Work.all_work("movie")
-      movie = Work.all_work("movie")
+
       book = Work.all_work("book")
+      album = Work.all_work("album")
 
       # Act-Assert
-      expect(movie.length).must_equal 2
-      expect(book.length).must_equal 4
+      expect(book.length).must_equal 3
+      expect(album.length).must_equal 3
 
-      movie.each do |movie|
-        expect(movie.category).must_equal "movie"
+      album.each do |album|
+        expect(album.category).must_equal "album"
       end
 
       book.each do |book|
@@ -117,26 +125,17 @@ describe Work do
       end
     end
 
-    it "can show top_ten per category" do # //TODO
-      # test failling
+    it "can show top_ten per category" do
       # Arrange
-      vote_1 = Vote.create(user_id: User.first.id, work_id: Work.first.id)
-      vote_2 = Vote.create(user_id: User.second.id, work_id: Work.first.id)
-      vote_3 = Vote.create(user_id: User.first.id, work_id: Work.second.id)
-      vote_4 = Vote.create(user_id: User.first.id, work_id: Work.last.id)
 
-      top_album = Work.top_ten("album")
+      top_books = Work.top_ten("book")
 
-      expect(top_album.length).must_equal 2
-      expect(top_album[0].votes.count).must_equal 2
+      expect(top_books.length).must_equal 3
+      expect(top_books[0].votes.count).must_equal 2
     end
 
     it "spotlight" do
-      vote_1 = Vote.create(user_id: User.first.id, work_id: Work.first.id)
-      vote_2 = Vote.create(user_id: User.second.id, work_id: Work.first.id)
-      vote_3 = Vote.create(user_id: User.first.id, work_id: Work.second.id)
-      vote_4 = Vote.create(user_id: User.first.id, work_id: Work.last.id)
-
+    
       top = Work.spotlight
 
       expect(top).must_be_instance_of Work
