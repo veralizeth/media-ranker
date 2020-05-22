@@ -2,7 +2,7 @@
 <section class="spotlight">
   <h2 class="spotlight__header">
     <% if Work.spotlight.nil? %>
-      <p><%= "We dont have votes so far!"%></p>
+      <p><%= "There is not spotlight -> Go to all media and vote for your favorites!"%></p>
     <% else %>
       <span class="spotlight__header--prefix">Media Spotlight:</span>
       <%=link_to Work.spotlight.title, work_path(Work.spotlight.id) %>
