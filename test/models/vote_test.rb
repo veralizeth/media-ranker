@@ -1,6 +1,7 @@
 require "test_helper"
 
 describe Vote do
+  
   let (:work) {
     Work.create(category: "book", title: "The Opera", creator: "Opera", publication_year: "1995", description: "the Opera 75")
   }
@@ -25,6 +26,7 @@ describe Vote do
     end
   end
   describe "validations" do
+
     it "must have a user_id" do
       # Arrange
       vote_one.user_id = nil
