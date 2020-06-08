@@ -23,10 +23,17 @@
     <tbody>
     <% Vote.where(work_id: @work.id).each do |vote| %>
       <% user = User.find_by(id: vote.user_id)%>
-      <tr>
-        <td><%= link_to vote.user.username, user_path(vote.user.id)%></td>
-        <td><%= vote.created_at.strftime("%b %d, %Y")%></td>
-      <tr>
+      <% if user.nil? %>
+        <tr>
+          <td><%= "User deleted from the DB"%></td>
+          <td><%= "Not date available"%></td>
+        <tr>
+      <% else %>
+        <tr>
+          <td><%= link_to vote.user.username, user_path(vote.user.id)%></td>
+          <td><%= vote.created_at.strftime("%b %d, %Y")%></td>
+        <tr>
+      <% end %>
      <% end %>
     </tbody>
   </table>

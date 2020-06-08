@@ -31,4 +31,26 @@ class ActiveSupport::TestCase
     user = User.find_by(username: username)
     return user
   end
+
+  # # To be able to mock the interaction with Github
+
+  # def setup
+  #   # Once you have enabled test mode, all requests
+  #   # to OmniAuth will be short circuited to use the mock authentication hash.
+  #   # A request to /auth/provider will redirect immediately to /auth/provider/callback.
+  #   OmniAuth.config.test_mode = true
+  # end
+
+  # # Test helper method to generate a mock auth hash
+  # # for fixture data
+  # def mock_auth_hash(user)
+  #   return {
+  #     provider: user.provider,
+  #     uid: user.uid,
+  #     info: {
+  #       email: user.email,
+  #       nickname: user.name,
+  #     },
+  #   }
+  # end
 end

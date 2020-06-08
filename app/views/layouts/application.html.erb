@@ -39,11 +39,12 @@
     <%if session[:user_id]%>
       <ul class="nav app-header__user-nav-container">
         <li class= "nav-item app-header__nav_item"><%=link_to "Logged in as #{session[:username]}", current_user_path(session[:user_id]), :class => "btn btn-primary"%></li>
-        <li class= "nav-item app-header__nav_item"><%=link_to "Log out", logout_path, :class => "btn btn-primary", :method => :post %></li>
+        <li class= "nav-item app-header__nav_item"><%=link_to "Log out", logout_path, :class => "btn btn-primary", :method => :delete %></li>
       </ul>
       <%elsif session[:id] == nil%>
       <ul class="nav app-header__user-nav-container">
-        <li class= "nav-item app-header__nav_item"><%=link_to "Log In", login_path, :class => "btn btn-primary"%></li> 
+        <%# <li class= "nav-item app-header__nav_item"><%=link_to "Log In", login_path, :class => "btn btn-primary"%>
+        <li class= "nav-item app-header__nav_item"><%= link_to "Login with GitHub", github_login_path, :class => "btn btn-primary" %></li>
       </ul>
     <%end%>
 
